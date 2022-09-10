@@ -1,0 +1,57 @@
+name: Generate
+
+on:
+  push:
+    branches:
+      - '**'
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    name: Generate domain sets
+    runs-on: ubuntu-latest
+    env:
+      GOAMD64: v3
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ^1.19
+
+      - name: Pull from v2fly/dlc
+        run: |
+          cd ../
+          git clone https://github.com/v2fly/domain-list-community.git --verbose --depth 1
+          cd domain-list-community/
+          go build -trimpath -ldflags '-s -w'
+          ./domain-list-community -exportlists 'category-ads-all,private,cn,geolocation-!cn,digitalocean,google,netflix,ookla-speedtest,spotify,vultr'
+
+      - name: Convert to domain sets
+        run: |
+          mkdir release
+          cd ../
+          git clone https://github.com/database64128/shadowsocks-go.git --verbose --depth 1
+          cd shadowsocks-go/
+          go build -trimpath -ldflags '-s -w' ./cmd/shadowsocks-go-domain-set-converter
+          find ../domain-list-community/ -type f -name '*.txt' -print0 | xargs -r0 -I '{}' basename '{}' .txt | sed '/geolocation-!cn/d' | xargs -I '{}' ./shadowsocks-go-domain-set-converter -inDlc '../domain-list-community/{}.txt' -outText '../shadowsocks-go-domain-sets/release/ss-go-{}.txt' -outGob '../shadowsocks-go-domain-sets/release/ss-go-gob-{}'
+          ./shadowsocks-go-domain-set-converter -inDlc '../domain-list-community/geolocation-!cn.txt' -outText '../shadowsocks-go-domain-sets/release/ss-go-geolocation-!cn@cn.txt' -outGob '../shadowsocks-go-domain-sets/release/ss-go-gob-geolocation-!cn@cn' -tag cn
+
+      - name: Deploy to release branch
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: release
+          build_dir: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
