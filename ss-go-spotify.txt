@@ -1,0 +1,21 @@
+# shadowsocks-go domain set capacity hint 7 13 0 0 DSKR
+domain:spotify.com.edgesuite.net
+domain:spotify.map.fastly.net
+domain:spotify.map.fastlylb.net
+domain:audio-ak-spotify-com.akamaized.net
+domain:audio4-ak-spotify-com.akamaized.net
+domain:heads-ak-spotify-com.akamaized.net
+domain:heads4-ak-spotify-com.akamaized.net
+suffix:spoti.fi
+suffix:spotify.design
+suffix:spotifycdn.net
+suffix:spotifycodes.com
+suffix:spotifyforbrands.com
+suffix:spotifyjobs.com
+suffix:byspotify.com
+suffix:spotify-everywhere.com
+suffix:spotify.com
+suffix:spotifycdn.com
+suffix:spotifycharts.com
+suffix:pscdn.co
+suffix:scdn.co
