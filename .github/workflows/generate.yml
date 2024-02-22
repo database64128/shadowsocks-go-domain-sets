@@ -41,7 +41,7 @@ jobs:
           git clone https://github.com/v2fly/domain-list-community.git --verbose --depth 1
           cd domain-list-community/
           go build -trimpath -ldflags '-s -w'
-          ./domain-list-community -exportlists 'category-ads-all,private,cn,geolocation-!cn,bing,digitalocean,google,netflix,ookla-speedtest,spotify,vultr'
+          ./domain-list-community -exportlists 'category-ads-all,private,cn,geolocation-!cn,bing,digitalocean,google,netflix,ookla-speedtest,spotify,telegram,vultr'
 
       - name: Convert to domain sets
         run: |
