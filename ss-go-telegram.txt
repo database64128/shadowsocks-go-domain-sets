@@ -1,0 +1,20 @@
+# shadowsocks-go domain set capacity hint 0 19 0 0 DSKR
+suffix:telega.one
+suffix:telegra.ph
+suffix:telegram.dog
+suffix:telesco.pe
+suffix:t.me
+suffix:telegram.me
+suffix:tx.me
+suffix:telegram.space
+suffix:tg.dev
+suffix:usercontent.dev
+suffix:cdn-telegram.org
+suffix:graph.org
+suffix:telegram-cdn.org
+suffix:telegram.org
+suffix:comments.app
+suffix:contest.com
+suffix:fragment.com
+suffix:tdesktop.com
+suffix:quiz.directory
