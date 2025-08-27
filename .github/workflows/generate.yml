@@ -43,13 +43,13 @@ jobs:
           find ../domain-list-community/ -type f -name '*.txt' -print0 | \
           xargs -r0 -I '{}' basename '{}' .txt | \
           sed '/geolocation-!cn/d' | \
-          xargs -I '{}' go run github.com/database64128/shadowsocks-go/cmd/shadowsocks-go-domain-set-converter@latest \
+          xargs -I '{}' go run github.com/database64128/shadowsocks-go/cmd/shadowsocks-go-domain-set-converter@main \
             -inDlc '../domain-list-community/{}.txt' \
             -outText 'release/ss-go-{}.txt' \
             -outGob 'release/ss-go-gob-{}' \
             -skipRegexp
 
-          go run github.com/database64128/shadowsocks-go/cmd/shadowsocks-go-domain-set-converter@latest \
+          go run github.com/database64128/shadowsocks-go/cmd/shadowsocks-go-domain-set-converter@main \
             -inDlc '../domain-list-community/geolocation-!cn.txt' \
             -outText 'release/ss-go-geolocation-!cn@cn.txt' \
             -outGob 'release/ss-go-gob-geolocation-!cn@cn' \
