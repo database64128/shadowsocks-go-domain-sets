@@ -1,0 +1,13 @@
+# shadowsocks-go domain set capacity hint 1 11 0 0 DSKR
+domain:www.speedtest.net.cdn.cloudflare.net
+suffix:cdnst.net
+suffix:ooklaserver.net
+suffix:pingtest.net
+suffix:speedtest.net
+suffix:webtest.net
+suffix:ekahau.com
+suffix:ookla.com
+suffix:speedtestcustom.com
+suffix:cellmaps.com
+suffix:ekahau.cloud
+suffix:speedtest.co

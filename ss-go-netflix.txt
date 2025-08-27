@@ -1,0 +1,25 @@
+# shadowsocks-go domain set capacity hint 1 23 0 0 DSKR
+domain:netflix.com.edgesuite.net
+suffix:netflixdnstest1.com
+suffix:netflixdnstest3.com
+suffix:netflixdnstest10.com
+suffix:netflixinvestor.com
+suffix:nflxext.com
+suffix:nflximg.com
+suffix:netflixdnstest0.com
+suffix:netflixdnstest2.com
+suffix:netflixdnstest5.com
+suffix:netflixdnstest7.com
+suffix:netflix.com
+suffix:netflixdnstest6.com
+suffix:fast.com
+suffix:netflixtechblog.com
+suffix:netflixdnstest4.com
+suffix:netflixdnstest8.com
+suffix:netflixdnstest9.com
+suffix:netflix.ca
+suffix:netflix.net
+suffix:nflximg.net
+suffix:nflxsearch.net
+suffix:nflxso.net
+suffix:nflxvideo.net
