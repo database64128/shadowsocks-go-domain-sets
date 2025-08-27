@@ -46,13 +46,15 @@ jobs:
           xargs -I '{}' go run github.com/database64128/shadowsocks-go/cmd/shadowsocks-go-domain-set-converter@latest \
             -inDlc '../domain-list-community/{}.txt' \
             -outText 'release/ss-go-{}.txt' \
-            -outGob 'release/ss-go-gob-{}'
-            
+            -outGob 'release/ss-go-gob-{}' \
+            -skipRegexp
+
           go run github.com/database64128/shadowsocks-go/cmd/shadowsocks-go-domain-set-converter@latest \
             -inDlc '../domain-list-community/geolocation-!cn.txt' \
             -outText 'release/ss-go-geolocation-!cn@cn.txt' \
             -outGob 'release/ss-go-gob-geolocation-!cn@cn' \
-            -tag cn
+            -tag cn \
+            -skipRegexp
 
       - name: Deploy to release branch
         uses: crazy-max/ghaction-github-pages@v4
