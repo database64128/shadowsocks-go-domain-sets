@@ -57,7 +57,7 @@ jobs:
             -skipRegexp
 
       - name: Deploy to release branch
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: release
           build_dir: release
