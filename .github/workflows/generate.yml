@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir ssgo-bin
           gh release download --repo database64128/shadowsocks-go --pattern '*-linux-x86-64-v3.tar.zst' --dir ssgo-bin
-          tar -xf ssgo-bin/*-linux-x86-64-v3.tar.zst -C ssgo-bin ./shadowsocks-go-domain-set-converter
+          tar -xf ssgo-bin/*-linux-x86-64-v3.tar.zst -C ssgo-bin
           echo "$PWD/ssgo-bin" >> "$GITHUB_PATH"
 
       - name: Pull from v2fly/dlc
