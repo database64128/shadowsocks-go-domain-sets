@@ -1,0 +1,7 @@
+# shadowsocks-go domain set capacity hint 0 6 0 0 DSKR
+suffix:ondigitalocean.com
+suffix:digitalocean-ui.com
+suffix:digitalocean.com
+suffix:digitaloceanspaces.com
+suffix:do.co
+suffix:nginxconfig.io

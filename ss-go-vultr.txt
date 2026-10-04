@@ -1,0 +1,2 @@
+# shadowsocks-go domain set capacity hint 0 1 0 0 DSKR
+suffix:vultr.com
